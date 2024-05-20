@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const props = defineProps({
+    isDisable: Boolean,
+  });
+</script>
 
 <template>
-  <button
-    class="text-black border border-gray-500 bg-white p-2 w-full max-w-48"
-  >
+  <button class="text-white bg-a-green-5bba47 px-4 py-3 rounded-md w-full text-20 h-52px" :class="isDisable ? 'opacity-50' : ''">
     <slot></slot>
   </button>
 </template>

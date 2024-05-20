@@ -1,18 +1,20 @@
+// import { ProductModel , DataModel } from "@/model/MainProductModel"
+
 interface MainProductInterface {
-    name: string | null,
+    name: string,
     model: ModelInterface[]
 }
 interface ModelInterface {
-    color: string | null
-    color_hex: string | null
+    color: string
+    color_hex: string
     data: DataModelInterface[]
 }
 interface DataModelInterface {
     readonly id: number
-    name: string | null
-    model_name: string | null
-    imageUrl: string | null
-    size: string | null
+    name: string
+    model_name: string
+    image_url: string 
+    size: string
     price: number
     price_deposit: number
     images: string[]
@@ -24,3 +26,4 @@ interface DataModelInterface {
     variant_product: string[]
     active: boolean
 }
+

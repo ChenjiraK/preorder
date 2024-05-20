@@ -1,0 +1,48 @@
+%modal {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1050;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.open {
+        display: flex;
+    }
+
+    .backdrop-area {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 672px;
+        max-height: 100vh;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1040;
+    background-color: rgba(0,0,0, 0.5);
+}

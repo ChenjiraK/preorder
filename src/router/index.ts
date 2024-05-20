@@ -1,22 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/group",
-    name: "group",
+    path: "/preorder",
+    name: "preorder",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/GroupData.vue"),
+      import("../views/PreOrder.vue"),
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory('/store'),
   routes,
 });
 
