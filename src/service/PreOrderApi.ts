@@ -1,4 +1,3 @@
-import {MainProductModel} from "@/model/MainProductModel";
 export default class PreOrderApi {
     public static async apiGetPreOrder (): Promise<MainProductInterface[]>{
         const response = await fetch('https://interview.com7.in/api/pre-order');
@@ -7,10 +6,6 @@ export default class PreOrderApi {
         }
         const data = await response.json();
         const dataInterface:MainProductInterface[] = data?.data?.main_product || [];
-        // const dataModel:MainProductModel[] = []
-        // for(let item of dataInterface){
-        //     dataModel.push(new MainProductModel(item))
-        // }
         return dataInterface;
     }
     public static async postPreOrder(id:Number) {

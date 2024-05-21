@@ -1,5 +1,3 @@
-// import { ProductModel , DataModel } from "@/model/MainProductModel"
-
 interface MainProductInterface {
     name: string,
     model: ModelInterface[]
