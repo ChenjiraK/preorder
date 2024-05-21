@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="modal" :class="{'open' : show}" v-if="show">
+        <div id="success-modal" class="modal" :class="{'open' : show}" v-if="show">
             <div class="modal-content text-black">
                 <div class="bg-white w-full rounded-xl p-5 flex justify-center text-center">
                     <div>
