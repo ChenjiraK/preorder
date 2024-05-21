@@ -3,35 +3,48 @@
     <div v-if="isLoaded" class="flex justify-center">
       <div class="grid grid-cols-1 md:grid-cols-2 px-8 max-w-5xl">
         <div class="relative">
-          <img class="image w-full" v-bind:src="imageUrl" @load="imageLoaded()"/>
+          <img id="product-image" class="image w-full" v-bind:src="imageUrl" @load="imageLoaded()"/>
           <div class="w-full bg-opacity-10 text-center rounded-lg" v-if="loadingImage">
               กำลังดาวโหลดรูปภาพ...
           </div>
         </div>
         <div class="height-content hide-scroll">
           <div>
-              <div class="text-40 py-8 font-semibold">ซื้อ iPhone 13</div>
+              <div id="title" class="text-40 py-8 font-semibold">ซื้อ iPhone 13</div>
               <div class="text-24 pb-8 font-semibold">รุ่น</div>
-              <div class="grid grid-cols-1 gap-4">
-                <div v-for="(item, index) in modelList" :key="index + '_model'" @click="onClickSelectModel(item.model ,item.id)">
-                  <ModelList :name="item.name" :price="item.price" :isActive="modelActiveId == item.id"></ModelList>
-                </div>
+              <div id="model-list" class="grid grid-cols-1 gap-4">
+                <ModelList id="model-item"
+                    v-for="(item, index) in modelList" 
+                    :key="index + '_model'" 
+                    :name="item.name" 
+                    :price="item.price" 
+                    :isActive="modelActiveId == item.id" 
+                    @click="onClickSelectModel(item.model ,item.id)">
+                </ModelList>
               </div>
           </div>
           <div>
             <div class="text-24 py-8 font-semibold">สี</div>
-            <div class="grid grid-cols-2 gap-4">
-              <div v-for="(item, index) in colorList" :key="index + '_color'" @click="onclickSelectColor(item.data, item.id)">
-                <ColorList :text="item.color" :color="item.colorHex" :isActive="colorActiveId == item.id"></ColorList>
-              </div>
+            <div id="color-list" class="grid grid-cols-2 gap-4">
+              <ColorList id="color-item"
+                  v-for="(item, index) in colorList" :key="index + '_color'"
+                  :text="item.color" 
+                  :color="item.colorHex" 
+                  :isActive="colorActiveId == item.id" 
+                  @click="onclickSelectColor(item.data, item.id)">
+              </ColorList>
             </div>
           </div>
           <div>
             <div class="text-24 py-8 font-semibold">ขนาด</div>
-            <div class="grid grid-cols-2 gap-4">
-              <div v-for="(item, index) in sizeList" :key="index + '_size'" @click="onClickSelectSize(item.id)">
-                <SizeList :size="item.size ? item.size : ''" :price="item.price" :isActive="selectId == item.id"></SizeList>
-              </div>
+            <div id="size-list" class="grid grid-cols-2 gap-4">
+              <SizeList id="size-item"
+                  v-for="(item, index) in sizeList" :key="index + '_size'"
+                  :size="item.size ? item.size : ''" 
+                  :price="item.price" 
+                  :isActive="selectId == item.id" 
+                  @click="onClickSelectSize(item.id)">
+              </SizeList>
             </div>
           </div>
           <div>
@@ -50,7 +63,7 @@
             </div>
           </div>
           <hr class="my-9">
-          <MainButton class="mb-8 font-semibold" @click="onSubmit()">
+          <MainButton id="btn-submit" class="mb-8 font-semibold" @click="onSubmit()">
             ยืนยันการสั่งซื้อล่วงหน้า
           </MainButton>
         </div>
