@@ -3,7 +3,7 @@
     <div v-if="isLoaded" class="flex justify-center">
       <div class="grid grid-cols-1 md:grid-cols-2 px-8 max-w-5xl">
         <div class="relative">
-          <img id="product-image" class="image w-full" v-bind:src="imageUrl" @load="imageLoaded()"/>
+          <img id="product-image" loading="lazy" class="image w-full" v-bind:src="imageUrl" @load="imageLoaded()"/>
           <div class="w-full bg-opacity-10 text-center rounded-lg" v-if="loadingImage">
               กำลังดาวโหลดรูปภาพ...
           </div>

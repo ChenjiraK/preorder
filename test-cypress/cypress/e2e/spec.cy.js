@@ -1,6 +1,6 @@
 describe('Preorder website', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/preorder/')
+    cy.visit('https://chenjirak.github.io/preorder/')
   })
   it('should load the home page', () => {
     cy.get('#topbar').contains('สั่งซื้อล่วงหน้า iPhone 13');
